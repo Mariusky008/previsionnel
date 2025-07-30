@@ -314,6 +314,328 @@
         margin-bottom: 1rem;
     }
 }
+
+/* Section Valorisation - Design moderne */
+#Valorisation {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 25px;
+    padding: 50px 40px;
+    margin: 40px 0;
+    box-shadow: 0 25px 50px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de particules en arrière-plan */
+#Valorisation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px, 80px 80px;
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+/* Titre de la section */
+.section-Valorisation {
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+    letter-spacing: -0.5px;
+}
+
+.section-Valorisation::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+    margin: 20px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(255, 215, 0, 0.5);
+}
+
+/* Container du tableau */
+.table-Valorisation {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+    backdrop-filter: blur(20px);
+    position: relative;
+    z-index: 2;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Tableau principal */
+table-Valorisation table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Force la largeur fixe des colonnes */
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background: transparent;
+}
+
+/* En-tête du tableau */
+.table-Valorisation thead {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    position: relative;
+}
+
+.table-Valorisation thead::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2980b9, #3498db);
+}
+
+.table-Valorisation thead th {
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    position: relative;
+    background: transparent;
+}
+
+
+
+.table-Valorisation thead th:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 30%;
+    height: 40%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.3), transparent);
+}
+
+/* Corps du tableau */
+.table-Valorisation tbody tr {
+    background: white;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.table-Valorisation tbody tr::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.05));
+    transition: width 0.4s ease;
+    z-index: 1;
+}
+
+.table-Valorisation tbody tr:hover::before {
+    width: 100%;
+}
+
+.table-Valorisation tbody tr:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.2);
+}
+
+.table-Valorisation tbody td {
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 2;
+    color: #2c3e50;
+}
+
+/* Première colonne - Année */
+.table-Valorisation tbody td:first-child {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    font-weight: 800;
+    font-size: 1.8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.table-Valorisation tbody td:first-child::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.table-Valorisation tbody tr:hover td:first-child::before {
+    opacity: 1;
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+/* Colonnes de montants */
+.table-Valorisation tbody td:nth-child(2),
+.table-Valorisation tbody td:nth-child(3),
+.table-Valorisation tbody td:nth-child(4) {
+    font-family: 'Monaco', 'Menlo', monospace;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Colonne Multiple */
+.table-Valorisation tbody td:nth-child(5) {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    color: #856404;
+    font-weight: 700;
+    border-left: 3px solid #f39c12;
+}
+
+/* Dernière colonne - Valorisation finale */
+.table-Valorisation tbody td:last-child {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    font-weight: 800;
+    font-size: 1.6rem;
+    position: relative;
+    overflow: hidden;
+    border-left: 4px solid #f1c40f;
+}
+
+.table-Valorisation tbody td:last-child::before {
+    content: '🎯';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.1); }
+}
+
+.table-Valorisation tbody td:last-child strong {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Note explicative */
+#Valorisation div[style*="margin-top"] {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px !important;
+    border-left: 5px solid #f39c12;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+#Valorisation div[style*="margin-top"] em {
+    color: #2c3e50 !important;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    line-height: 1.6;
+    font-style: normal;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #Valorisation {
+        padding: 30px 25px;
+        margin: 25px 0;
+    }
+    
+    .section-Valorisation {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #Valorisation {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+    
+    .section-Valorisation {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+    
+    .table-Valorisation {
+        border-radius: 12px;
+    }
+    
+    .table-Valorisation thead th,
+    .table-Valorisation tbody td {
+        padding: 15px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .table-Valorisation tbody td:first-child {
+        font-size: 1.3rem;
+    }
+    
+    .table-Valorisation tbody td:last-child {
+        font-size: 1.2rem;
+    }
+    
+    .table-Valorisation tbody td:last-child::before {
+        left: 8px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .table-Valorisation thead th,
+    .table-Valorisation tbody td {
+        padding: 12px 6px;
+        font-size: 0.8rem;
+    }
+    
+    .section-Valorisation {
+        font-size: 1.5rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -321,7 +643,7 @@
         <!-- Header -->
         <div class="header">
             <h1>📊 PRÉVISIONNEL FINANCIER </h1>
-            <p>Projet Popey - Café Autonome + Coworking | St Paul les dax (Grand Mail, à coté d'action : 5000 passages jour)</p>
+            <p>Projet Popey - Café Autonome + Coworking | St Paul les dax (Grand Mail, à coté d'action : 5000 passages/jour)</p>
            
         </div>
 
@@ -330,7 +652,7 @@
             <h2 class="section-title">🎯 Analyse de Marché et Positionnement</h2>
             
             <div class="market-data">
-                <h3  style="color:#d4edda">Marché Local - Dax et Agglomération</h3>
+                <h3  style="color:#d4edda">Marché Local - Agglomération du Grand Dax</h3>
                 <div class="kpi-grid">
                     <div>
                         <div  style="color:#d4edda" class="kpi-value">65 000</div>
@@ -923,7 +1245,37 @@
                     <td>89 799€</td>
                     <td>92 371€</td>
                 </tr>
-                
+
+                <tr class="category-header">
+                    
+                </tr>
+                <tr>
+    <td><strong>EBE (Excédent Brut d’Exploitation)</strong></td>
+    <td>133 832€</td>
+    <td>195 794€</td>
+    <td>226 695€</td>
+</tr>
+<tr>
+    <td><strong>Amortissements</strong></td>
+    <td>14 000€</td>
+    <td>14 000€</td>
+    <td>14 000€</td>
+</tr>
+<tr>
+  <td><strong>Résultat d’exploitation</strong></td>
+  <td>119 832€</td>
+  <td>181 794€</td>
+  <td>212 695€</td>
+</tr>
+
+<tr>
+  <td><strong>CAF (Capacité d’autofinancement)</strong></td>
+  <td>114 374€</td>
+  <td>160 846€</td>
+  <td>184 021€</td>
+</tr>
+
+
                 <!-- RÉSULTAT -->
                 <tr class="category-header">
                     <td colspan="4">RÉSULTAT</td>
@@ -957,6 +1309,38 @@
     </div>
 </section>
 
+<section id="Valorisation" class="section">
+    <h2 class="section-Valorisation">📈 Valorisation de la Société à 5 ans</h2>
+    <div class="table-Valorisation">
+        <table>
+            <thead>
+                <tr>
+                    <th>Année</th>
+                    <th>CA Total</th>
+                    <th>Résultat Net</th>
+                    <th>EBE estimé</th>
+                    <th>Multiple retenu</th>
+                    <th>Valorisation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  
+                    <td>4.5M</td>
+                    <td>1 000 000 €</td>
+                    <td>1 300 000 €</td>
+                    <td>7,7x l’EBE</td>
+                    <td><strong style="color: #e9ecea;">~10M €</strong></td>
+                    
+                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-top: 15px; color: #555;">
+        <em>📌 En cas de revente ou d'entrée d'un fonds, cette valorisation permet un retour sur investissement très attractif pour les premiers actionnaires.</em>
+    </div>
+</section>
       <!-- Plan de Trésorerie -->
 <div class="section">
     <h2 class="section-title">💰 Plan de Trésorerie Détaillé</h2>
@@ -1040,7 +1424,7 @@
                     </tr>
                     <tr>
                         <td>Investissements</td>
-                        <td class="negative">139 200€</td>
+                        <td class="negative">170 000€</td>
                         <td class="negative">0€</td>
                         <td class="negative">0€</td>
                         <td class="negative">0€</td>
