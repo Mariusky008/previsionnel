@@ -222,6 +222,180 @@
             border-radius: 5px;
         }
 
+        .risks-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .risk-card-modern {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-top: 5px solid;
+        }
+
+        .risk-card-modern.technical {
+            border-top-color: #e74c3c;
+        }
+
+        .risk-card-modern.commercial {
+            border-top-color: #f39c12;
+        }
+
+        .risk-card-modern.financial {
+            border-top-color: #9b59b6;
+        }
+
+        .risk-card-modern:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .risk-header {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .risk-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .risk-header h4 {
+            flex: 1;
+            margin: 0;
+            color: #2c3e50;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .risk-severity {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .risk-severity.high {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .risk-severity.medium {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+        }
+
+        .risk-content {
+            padding: 20px;
+        }
+
+        .risk-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .risk-item:hover {
+            background: #e9ecef;
+        }
+
+        .risk-impact {
+            min-width: 60px;
+            padding: 8px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+            text-align: center;
+            margin-right: 15px;
+            font-size: 0.9rem;
+        }
+
+        .risk-impact.negative {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .risk-impact.warning {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+        }
+
+        .risk-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .risk-details strong {
+            color: #2c3e50;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .risk-details span {
+            color: #6c757d;
+            font-size: 0.85rem;
+        }
+
+        .mitigation {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .mitigation-label {
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mitigation-text {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .risks-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .risk-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .risk-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .risk-impact {
+                margin-right: 0;
+            }
+        }
+
         .note {
             background: #fff3cd;
             border: 1px solid #ffeaa7;
@@ -253,6 +427,108 @@
             border-radius: 10px;
             margin: 20px 0;
             text-align: center;
+        }
+
+        .growth-justification {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #28a745;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .growth-justification h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        .growth-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .growth-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .growth-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .growth-year {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            min-width: 100px;
+            text-align: center;
+            margin-right: 20px;
+            font-size: 1.1rem;
+        }
+
+        .growth-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .growth-rate {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            align-self: flex-start;
+            font-size: 1rem;
+        }
+
+        .growth-description {
+            color: #2c3e50;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .growth-badge {
+            background: #6c757d;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            align-self: flex-start;
+            font-weight: 500;
+        }
+
+        .growth-badge.success {
+            background: linear-gradient(135deg, #28a745, #20c997);
+        }
+
+        .growth-badge.mature {
+            background: linear-gradient(135deg, #fd7e14, #e83e8c);
+        }
+
+        @media (max-width: 768px) {
+            .growth-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .growth-year {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -388,10 +664,10 @@
 }
 
 /* Tableau principal */
-table-Valorisation table {
+.table-Valorisation table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed; /* Force la largeur fixe des colonnes */
+    table-layout: auto; /* Changé de 'fixed' à 'auto' */
     margin: 0;
     font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
     background: transparent;
@@ -506,7 +782,7 @@ table-Valorisation table {
     transform: rotate(45deg) translate(50%, 50%);
 }
 
-/* Colonnes de montants */
+/* Colonnes de montants - Mise à jour pour 6 colonnes */
 .table-Valorisation tbody td:nth-child(2),
 .table-Valorisation tbody td:nth-child(3),
 .table-Valorisation tbody td:nth-child(4) {
@@ -516,7 +792,7 @@ table-Valorisation table {
     overflow: hidden;
 }
 
-/* Colonne Multiple */
+/* Colonne Multiple - maintenant 5ème colonne */
 .table-Valorisation tbody td:nth-child(5) {
     background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
     color: #856404;
@@ -774,9 +1050,15 @@ table-Valorisation table {
                 </tr>
                 <tr>
                     <td>Travaux d'aménagement</td>
-                    <td>50 000€</td>
-                    <td>5 000€</td>
-                    <td>55 000€</td>
+                    <td>62 500€</td>
+                    <td>12 500€</td>
+                    <td>75 000€</td>
+                </tr>
+                <tr>
+                    <td>Fabrication de passerelle</td>
+                    <td>12 500€</td>
+                    <td>2 500€</td>
+                    <td>15 000€</td>
                 </tr>
                 <tr>
                     <td>Travaux de décoration</td>
@@ -792,9 +1074,9 @@ table-Valorisation table {
                 </tr>
                 <tr class="subtotal-row">
                     <td>Sous-total Aménagement</td>
-                    <td>56 667€</td>
-                    <td>5 333€</td>
-                    <td>63 000€</td>
+                    <td>81 667€</td>
+                    <td>16 333€</td>
+                    <td>98 000€</td>
                 </tr>
                 
                 <!-- ÉQUIPEMENT COWORKING -->
@@ -864,9 +1146,9 @@ table-Valorisation table {
                 <!-- TOTAL -->
                 <tr class="total-row">
                     <td>TOTAL BESOINS</td>
-                    <td>152 667€</td>
-                    <td>17 533€</td>
-                    <td>170 200€</td>
+                    <td>177 667€</td>
+                    <td>32 333€</td>
+                    <td>210 000€</td>
                 </tr>
             </tbody>
         </table>
@@ -1010,16 +1292,70 @@ table-Valorisation table {
                         </tbody>
                     </table>
                 </div>
-                
-            </div>
 
-            <div class="assumptions">
+                <!-- 🧒 Chiffre d’Affaires Garde d’Enfants -->
+                 <div class="assumptions">
+                    <H3>🧒 Chiffre d’Affaires Garde d’Enfants</H3>
+                 <div class="table-container">
+<table class="financial-table">
+  <thead>
+    <tr>
+      <th>Formule</th>
+      <th>Prix/enfant</th>
+      <th>Nb enfants/heure</th>
+      <th>Heures/jour</th>
+      <th>Jours/an</th>
+      <th>CA Journalier</th>
+      <th>CA Annuel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Garde à la carte (2h en moyenne)</td>
+      <td>8€*2h = 16 €</td>
+      <td>5</td>
+      <td>8</td>
+      <td>250</td>
+      <td class="amount">640 €</td>
+      <td class="amount">160 000 €</td>
+    </tr>
+    <tr class="total-row">
+      <td colspan="5" style="padding: 8px; border: 1px solid #ddd;">TOTAL GARDE ENFANTS</td>
+      <td class="amount">640 €</td>
+      <td class="amount">160 000 €</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+            <div class="growth-justification">
                 <h3>📈 Justification Taux de Croissance</h3>
-                <ul>
-                    <li><strong>Année 1 :</strong> Montée en puissance (6 mois), effet curiosité, marketing de lancement</li>
-                    <li><strong>Année 2 (+21%) :</strong> Fidélisation client, bouche-à-oreille, optimisation offre</li>
-                    <li><strong>Année 3 (+19%) :</strong> Maturité du marché local, nouvelles offres (petits déjeuners, snacking)</li>
-                </ul>
+                <div class="growth-timeline">
+                    <div class="growth-item">
+                        <div class="growth-year">Année 1</div>
+                        <div class="growth-content">
+                            <div class="growth-description">Montée en puissance (6 mois), effet curiosité, marketing de lancement</div>
+                            <div class="growth-badge">Phase de lancement</div>
+                        </div>
+                    </div>
+                    <div class="growth-item">
+                        <div class="growth-year">Année 2</div>
+                        <div class="growth-content">
+                            <div class="growth-rate">+21%</div>
+                            <div class="growth-description">Fidélisation client, bouche-à-oreille, optimisation offre</div>
+                            <div class="growth-badge success">Croissance forte</div>
+                        </div>
+                    </div>
+                    <div class="growth-item">
+                        <div class="growth-year">Année 3</div>
+                        <div class="growth-content">
+                            <div class="growth-rate">+19%</div>
+                            <div class="growth-description">Maturité du marché local, nouvelles offres (petits déjeuners, snacking)</div>
+                            <div class="growth-badge mature">Consolidation</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1028,21 +1364,24 @@ table-Valorisation table {
     
     <div class="kpi-container">
         <div class="kpi-card">
-            <div style="color:#d4edda" class="kpi-value">109 000€</div>
+            <div style="color:#d4edda" class="kpi-value">203 610 €</div>  
             <div style="color:#d4edda" class="kpi-label">Seuil de Rentabilité Année 1</div>
+          <div style="font-size: 13px;">(Charges fixes ÷ Taux de marge brute)</div>
         </div>
         <div class="kpi-card">
-            <div style="color:#d4edda" class="kpi-value">185 € / jour</div>
-            <div style="color:#d4edda" class="kpi-label">Marge brute quotidienne</div>
+             
+             <div style="color:#d4edda" class="kpi-value">1 050 € / jour € </div>
+          <div style="color:#d4edda" class="kpi-label">Marge brute quotidienne</div> 
+          <div style="font-size: 13px;">(Marge brute ÷ 365 jours)</div>
         </div>
         <div class="kpi-card">
-            <div style="color:#d4edda" class="kpi-value">82%</div>
-            <div style="color:#d4edda" class="kpi-label">Taux marge brute moyen</div>
+            <div style="color:#d4edda" class="kpi-value">80%</div>
+            <div style="color:#d4edda" class="kpi-label">Taux marge brute moyen <div style="font-size: 13px;">(Marge brute ÷ CA)</div></div>
         </div>
         <div class="kpi-card">
-            <div style="color:#d4edda" class="kpi-value">20 mois</div>
+            <div style="color:#d4edda" class="kpi-value">14 mois </div>
             <div  style="color:#d4edda" class="kpi-label">Délai de récupération</div>
-          
+          <div style="font-size: 13px;">(Investissement initial ÷ CAF)</div>
         </div>
     </div>
     
@@ -1059,13 +1398,13 @@ table-Valorisation table {
             <tbody>
                 <tr>
                     <td><strong>ROI sur 3 ans</strong></td>
-                    <td class="amount">180%</td>
+                    <td class="amount">157%%</td>
                     <td>80-120%</td>
                     <td>✅ Exceptionnel</td>
                 </tr>
                 <tr>
                     <td><strong>TRI (Taux Rentabilité Interne)</strong></td>
-                    <td class="amount">40%</td>
+                    <td class="amount">60%</td>
                     <td>25-40%</td>
                     <td>✅ Très bon</td>
                 </tr>
@@ -1077,9 +1416,9 @@ table-Valorisation table {
                 </tr>
                 <tr>
                     <td><strong>Temps de récupération</strong></td>
-                    <td class="amount">20 mois</td>
+                    <td class="amount">14 mois</td>
                     <td>24-36 mois</td>
-                    <td>✅ Bon (rapide)</td>
+                    <td>✅ Bon (très rapide)</td>
                 </tr>
             </tbody>
         </table>
@@ -1115,11 +1454,17 @@ table-Valorisation table {
                     <td>118 091€</td>
                     <td>116 139€</td>
                 </tr>
+                 <tr>
+      <td>CA Espace Enfants</td>
+      <td>160 000 €</td>
+      <td>160 000 €</td>
+      <td>160 000 €</td>
+    </tr>
                 <tr class="subtotal-row">
                     <td>TOTAL CHIFFRE D'AFFAIRES</td>
-                    <td>321 341€</td>
-                    <td>415 566€</td>
-                    <td>475 481€</td>
+                    <td>481 341€</td>
+                    <td>575 566€</td>
+                    <td>635 481€</td>
                 </tr>
                 
                 <!-- CHARGES VARIABLES -->
@@ -1170,9 +1515,9 @@ table-Valorisation table {
                 </tr>
                 <tr class="total-row">
                     <td>MARGE BRUTE</td>
-                    <td>223 132€</td>
-                    <td>285 593€</td>
-                    <td>319 066€</td>
+                    <td>383 132€</td>
+                    <td>445 593€</td>
+                    <td>479 066€</td>
                 </tr>
                 
                 <!-- CHARGES FIXES -->
@@ -1181,9 +1526,9 @@ table-Valorisation table {
                 </tr>
                 <tr>
                     <td>Loyer et charges locatives</td>
-                    <td>42 000€</td>
-                    <td>43 260€</td>
-                    <td>44 558€</td>
+                    <td>57 600€</td>
+                    <td>58 200€</td>
+                    <td>58 900€</td>
                 </tr>
                 <tr>
                     <td>Salaires fixes</td>
@@ -1196,6 +1541,12 @@ table-Valorisation table {
                     <td>7 200€</td>
                     <td>7 416€</td>
                     <td>7 638€</td>
+                </tr>
+                <tr>
+                    <td>Auto-entrpreneur (enfants)</td>
+                    <td>50 000 €</td>
+                    <td>55 000 €</td>
+                    <td>60 000€</td>
                 </tr>
                 <tr>
                     <td>Assurances</td>
@@ -1241,9 +1592,9 @@ table-Valorisation table {
                 </tr>
                 <tr class="subtotal-row">
                     <td>TOTAL CHARGES FIXES</td>
-                    <td>89 300€</td>
-                    <td>89 799€</td>
-                    <td>92 371€</td>
+                    <td>162 100€</td>
+                    <td>162 799€</td>
+                    <td>163 371€</td>
                 </tr>
 
                 <tr class="category-header">
@@ -1251,9 +1602,9 @@ table-Valorisation table {
                 </tr>
                 <tr>
     <td><strong>EBE (Excédent Brut d’Exploitation)</strong></td>
-    <td>133 832€</td>
-    <td>195 794€</td>
-    <td>226 695€</td>
+    <td>221 032€</td>
+    <td>277 338€</td>
+    <td>303 445€</td>
 </tr>
 <tr>
     <td><strong>Amortissements</strong></td>
@@ -1263,16 +1614,16 @@ table-Valorisation table {
 </tr>
 <tr>
   <td><strong>Résultat d’exploitation</strong></td>
-  <td>119 832€</td>
-  <td>181 794€</td>
-  <td>212 695€</td>
+  <td>207 032€</td>
+  <td>263 338€</td>
+  <td>289 445€</td>
 </tr>
 
 <tr>
   <td><strong>CAF (Capacité d’autofinancement)</strong></td>
-  <td>114 374€</td>
-  <td>160 846€</td>
-  <td>184 021€</td>
+  <td>169 274€</td>
+  <td>211 503€</td>
+  <td>231 084€</td>
 </tr>
 
 
@@ -1282,27 +1633,27 @@ table-Valorisation table {
                 </tr>
                 <tr class="total-row">
                     <td>RÉSULTAT AVANT IMPÔTS</td>
-                    <td>133 832€</td>
-                    <td>195 794€</td>
-                    <td>226 695€</td>
+                    <td>207 032€</td>
+                    <td>263 338€</td>
+                    <td>289 445€</td>
                 </tr>
                 <tr>
                     <td>Impôts sur les sociétés (25%)</td>
-                    <td>33 458€</td>
-                    <td>48 948€</td>
-                    <td>56 674€</td>
+                    <td>51 758€</td>
+                    <td>65 835€</td>
+                    <td>72 361€</td>
                 </tr>
                 <tr class="total-row">
                     <td>RÉSULTAT NET</td>
-                    <td>100 374€</td>
-                    <td>146 846€</td>
-                    <td>170 021€</td>
+                    <td>155 274€</td>
+                    <td>197 503€</td>
+                    <td>217 084€</td>
                 </tr>
                 <tr>
                     <td>Marge Nette (%)</td>
-                    <td>31,2%</td>
-                    <td>35,3%</td>
-                    <td>35,8%</td>
+                    <td>32,3 %</td>
+                    <td>34,3 %</td>
+                    <td>34,2 %</td>
                 </tr>
             </tbody>
         </table>
@@ -1313,26 +1664,22 @@ table-Valorisation table {
     <h2 class="section-Valorisation">📈 Valorisation de la Société à 5 ans</h2>
     <div class="table-Valorisation">
         <table>
-            <thead>
+            <thead >
                 <tr>
-                    <th>Année</th>
+                    <th>Année 5</th>
                     <th>CA Total</th>
                     <th>Résultat Net</th>
                     <th>EBE estimé</th>
-                    <th>Multiple retenu</th>
                     <th>Valorisation</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                  
-                    <td>4.5M</td>
-                    <td>1 000 000 €</td>
-                    <td>1 300 000 €</td>
-                    <td>7,7x l’EBE</td>
-                    <td><strong style="color: #e9ecea;">~10M €</strong></td>
-                    
-                   
+                 
+                    <td>5.7M €</td>
+                    <td>1 606 600 €</td>
+                    <td>2 770 000€</td>
+                    <td><strong style="color: #e9ecea;">~21.3M €</strong></td>
                 </tr>
             </tbody>
         </table>
@@ -1395,13 +1742,21 @@ table-Valorisation table {
                         <td class="amount">24 399€</td>
                         <td class="amount">97 596€</td>
                     </tr>
+                    <tr>
+                        <td>CA Garde d’enfants</td>
+                        <td class="amount">40 000€</td>
+                        <td class="amount">40 000€</td>
+                        <td class="amount">40 000€</td>
+                        <td class="amount">40 000€</td>
+                        <td class="amount">160 000€</td>
+                    </tr>
                     <tr class="subtotal-row">
                         <td>Total Encaissements</td>
-                        <td class="amount">80 335€</td>
-                        <td class="amount">80 335€</td>
-                        <td class="amount">80 335€</td>
-                        <td class="amount">80 335€</td>
-                        <td class="amount">321 341€</td>
+                        <td class="amount">120 335€</td>
+                        <td class="amount">120 335€</td>
+                        <td class="amount">120 335€</td>
+                        <td class="amount">120 335€</td>
+                        <td class="amount">481 340€</td>
                     </tr>
                     <tr class="category-header">
                         <td colspan="6">DÉCAISSEMENTS</td>
@@ -1416,43 +1771,43 @@ table-Valorisation table {
                     </tr>
                     <tr>
                         <td>Charges fixes</td>
-                        <td class="negative">22 325€</td>
-                        <td class="negative">22 325€</td>
-                        <td class="negative">22 325€</td>
-                        <td class="negative">22 325€</td>
-                        <td class="negative">89 300€</td>
+                        <td class="negative">40 525€</td>
+                        <td class="negative">40 525€</td>
+                        <td class="negative">40 525€</td>
+                        <td class="negative">40 525€</td>
+                        <td class="negative">162 100€</td>
                     </tr>
                     <tr>
                         <td>Investissements</td>
-                        <td class="negative">170 000€</td>
+                        <td class="negative">210 000€</td>
                         <td class="negative">0€</td>
                         <td class="negative">0€</td>
                         <td class="negative">0€</td>
-                        <td class="negative">170 000€</td>
+                        <td class="negative">210 000€</td>
                     </tr>
                     <tr class="subtotal-row">
                         <td>Total Décaissements</td>
-                        <td class="negative">216 877€</td>
-                        <td class="negative">46 877€</td>
-                        <td class="negative">46 877€</td>
-                        <td class="negative">46 877€</td>
-                        <td class="negative">357 508€</td>
+                        <td class="negative">275 077€</td>
+                        <td class="negative">65 077€</td>
+                        <td class="negative">65 077€</td>
+                        <td class="negative">65 077€</td>
+                        <td class="negative">470 309€</td>
                     </tr>
                     <tr class="total-row">
                         <td><strong>Flux de Trésorerie</strong></td>
-                        <td class="negative"><strong>–136 542€</strong></td>
-                        <td class="amount"><strong>+33 458€</strong></td>
-                        <td class="amount"><strong>+33 458€</strong></td>
-                        <td class="amount"><strong>+33 458€</strong></td>
-                        <td class="negative"><strong>–36 168 €</strong></td>
+                        <td class="negative"><strong>-154 742€</strong></td>
+                        <td class="amount"><strong>+55 258€</strong></td>
+                        <td class="amount"><strong>+55 258€</strong></td>
+                        <td class="amount"><strong>+11 031€</strong></td>
+                      
                     </tr>
                     <tr>
                         <td>Trésorerie cumulée</td>
-                        <td class="negative">–136 542€</td>
-                        <td class="negative">–103 084€</td>
-                        <td class="negative">–69 626€</td>
-                        <td class="negative">–36 168€</td>
-                        <td class="negative">–36 168€</td>
+                        <td class="negative">-154 742€</td>
+                        <td class="negative">-99 484€</td>
+                        <td class="negative">-44 226€</td>
+                        <td class="negative">+11 031€</td>
+                     
                     </tr>
                 </tbody>
             </table>
@@ -1480,69 +1835,128 @@ table-Valorisation table {
                 </thead>
                 <tbody>
                     <tr class="total-row">
-                        <td><strong>Optimiste (+10%)</strong></td>
-                        <td class="amount">353 475 € × 1,10 = 486 475 €</td>
-                        <td class="amount">~+122 000 €</td>
+                        <td><strong>Optimiste</strong></td>
+                        <td class="amount">529 475 </td>
+                        <td class="amount">~+171 000 €</td>
                         <td class="amount">T1</td>
                         <td>✅ Excellent</td>
                     </tr>
                     <tr class="total-row">
                         <td><strong>Réaliste (base)</strong></td>
-                        <td class="amount">321 341€</td>
-                        <td class="amount">100 374€</td>
+                        <td class="amount">481 341 €</td>
+                        <td class="amount">+155 274€</td>
                         <td class="amount">T2</td>
-                        <td>✅ Très Bon</td>
+                        <td>✅ Excellent</td>
                     </tr>
                     <tr class="negative-row">
                         <td><strong>Pessimiste (-10%)</strong></td>
-                        <td class="amount">~289 200€</td>
-                        <td class="amount">~77 000€</td>
+                        <td class="amount">433 207€</td>
+                        <td class="amount">~+140 000€</td>
                         <td class="amount">T3</td>
-                        <td>✅ Bon</td>
+                        <td>✅ très Bon</td>
                     </tr>
                     <tr class="negative-row">
                         <td><strong>Critique (-20%)</strong></td>
-                        <td class="amount">~257 000€</td>
-                        <td class="amount">~54 000€</td>
+                        <td class="amount">385 073€</td>
+                        <td class="amount">+124 000€</td>
                         <td class="amount">T4</td>
-                        <td>✅ Bon</td>
+                        <td>✅ très Bon</td>
                     </tr>
                     <tr class="negative-row">
                         <td><strong>Catastrophe (-30%)</strong></td>
-                        <td class="amount">~225 000€</td>
-                        <td class="amount">~30 000$</td>
+                        <td class="amount">336 939€</td>
+                        <td class="amount">+109 000 €</td>
                         <td class="amount">An 2</td>
-                        <td>⚠️ À surveiller</td>
+                        <td>✅ Bon</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <div class="three-column">
-        <div class="risk-card">
-            <h4>🔧 Risques Techniques</h4>
-            <ul>
-                <li><strong>Panne robot :</strong> -15% CA/mois</li>
-                <li><strong>Maintenance :</strong> +50% coûts prévus</li>
-                <li><strong>Mitigation :</strong> Contrat maintenance, robot backup</li>
-            </ul>
+    <div class="risks-container">
+        <div class="risk-card-modern technical">
+            <div class="risk-header">
+                <div class="risk-icon">🔧</div>
+                <h4>Risques Techniques</h4>
+                <div class="risk-severity high">Élevé</div>
+            </div>
+            <div class="risk-content">
+                <div class="risk-item">
+                    <div class="risk-impact negative">-15%</div>
+                    <div class="risk-details">
+                        <strong>Panne robot</strong>
+                        <span>Impact sur CA mensuel</span>
+                    </div>
+                </div>
+                <div class="risk-item">
+                    <div class="risk-impact negative">+50%</div>
+                    <div class="risk-details">
+                        <strong>Maintenance</strong>
+                        <span>Dépassement coûts prévus</span>
+                    </div>
+                </div>
+                <div class="mitigation">
+                    <div class="mitigation-label">🛡️ Mitigation</div>
+                    <div class="mitigation-text">Contrat maintenance, robot backup</div>
+                </div>
+            </div>
         </div>
-        <div class="risk-card">
-            <h4>🏪 Risques Commerciaux</h4>
-            <ul>
-                <li><strong>Concurrence :</strong> -20% prix marché</li>
-                <li><strong>Adoption lente :</strong> -6 mois prévisions</li>
-                <li><strong>Mitigation :</strong> Marketing, fidélisation</li>
-            </ul>
+        
+        <div class="risk-card-modern commercial">
+            <div class="risk-header">
+                <div class="risk-icon">🏪</div>
+                <h4>Risques Commerciaux</h4>
+                <div class="risk-severity medium">Moyen</div>
+            </div>
+            <div class="risk-content">
+                <div class="risk-item">
+                    <div class="risk-impact negative">-20%</div>
+                    <div class="risk-details">
+                        <strong>Concurrence</strong>
+                        <span>Pression sur les prix</span>
+                    </div>
+                </div>
+                <div class="risk-item">
+                    <div class="risk-impact warning">-6 mois</div>
+                    <div class="risk-details">
+                        <strong>Adoption lente</strong>
+                        <span>Retard sur prévisions</span>
+                    </div>
+                </div>
+                <div class="mitigation">
+                    <div class="mitigation-label">🛡️ Mitigation</div>
+                    <div class="mitigation-text">Marketing, fidélisation</div>
+                </div>
+            </div>
         </div>
-        <div class="risk-card">
-            <h4>💰 Risques Financiers</h4>
-            <ul>
-                <li><strong>Inflation :</strong> +10% charges</li>
-                <li><strong>Taux d'occupation coworking :</strong> -30%</li>
-                <li><strong>Mitigation :</strong> Pricing flexible, diversification</li>
-            </ul>
+        
+        <div class="risk-card-modern financial">
+            <div class="risk-header">
+                <div class="risk-icon">💰</div>
+                <h4>Risques Financiers</h4>
+                <div class="risk-severity high">Élevé</div>
+            </div>
+            <div class="risk-content">
+                <div class="risk-item">
+                    <div class="risk-impact negative">+10%</div>
+                    <div class="risk-details">
+                        <strong>Inflation</strong>
+                        <span>Augmentation des charges</span>
+                    </div>
+                </div>
+                <div class="risk-item">
+                    <div class="risk-impact negative">-30%</div>
+                    <div class="risk-details">
+                        <strong>Taux d'occupation</strong>
+                        <span>Coworking sous-performant</span>
+                    </div>
+                </div>
+                <div class="mitigation">
+                    <div class="mitigation-label">🛡️ Mitigation</div>
+                    <div class="mitigation-text">Pricing flexible, diversification</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
